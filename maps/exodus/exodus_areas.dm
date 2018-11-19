@@ -396,6 +396,10 @@
 
 // Maintenance
 
+/area/maintenance/ghetto_medbay
+    name = "\improper Ghetto Medbay"
+    icon_state = "ghettomedbay"
+
 /area/maintenance/ghetto_minicasino
     name = "\improper Ghetto Mini Casino"
     icon_state = "ghettominicasino"
@@ -979,6 +983,10 @@
 /area/crew_quarters/barbackroom
 	name = "\improper Bar Backroom"
 	icon_state = "barBR"
+
+/area/crew_quarters/ubarbackroom           ////////////// new room for bartender
+	name = "\improper Underground Bar Backroom"
+	icon_state = "ubarBR"
 
 /area/crew_quarters/mess
 	name = "\improper Mess Hall"
