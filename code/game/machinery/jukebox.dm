@@ -11,8 +11,8 @@ datum/track/New(var/title_name, var/audio)
 /obj/machinery/media/jukebox
 	name = "space jukebox"
 	icon = 'icons/obj/jukebox.dmi'
-	icon_state = "jukebox2-nopower"
-	var/state_base = "jukebox2"
+	icon_state = "jukebox-nopower"
+	var/state_base = "jukebox"
 	anchored = 1
 	density = 1
 	power_channel = EQUIP
@@ -39,6 +39,7 @@ datum/track/New(var/title_name, var/audio)
 		new/datum/track("Scratch", 'sound/music/title1.ogg'),
 		new/datum/track("Trai`Tor", 'sound/music/traitor.ogg'),
 	)
+
 
 /obj/machinery/media/jukebox/New()
 	..()
@@ -177,15 +178,6 @@ datum/track/New(var/title_name, var/audio)
 		add_fingerprint(user)
 		wrench_floor_bolts(user, 0)
 		power_change()
-		return
-	else if(istype(W, /obj/item/weapon/coin))
-		user.drop_item()
-		W.forceMove(src)
-		to_chat(user, "<span class='notice'>You insert \the [W] into \the [src].</span>")
-		var/newtitle = input("Type a title of the new track", "Track title", "Track") as text
-		var/sound/S = input("Select a sound", "Sound", 'sound/effects/ghost.ogg') as sound
-		tracks += new/datum/track(newtitle, S)
-		GLOB.nanomanager.update_uis(src)
 		return
 	return ..()
 
